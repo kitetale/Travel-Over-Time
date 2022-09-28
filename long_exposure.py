@@ -7,7 +7,9 @@ rAvg, gAvg, bAvg = None, None, None
 total = 0
 
 #vid = cv2.VideoCapture("crop.mp4")
-vid = cv2.VideoCapture("stairs.mp4")
+# vid = cv2.VideoCapture("stairs.mp4")
+vid = cv2.VideoCapture("hallway.mp4")
+# vid = cv2.VideoCapture("hallway-shoes.mp4")
 
 while True:
     ret, frame = vid.read()
@@ -33,6 +35,9 @@ while True:
 avg = cv2.merge([bAvg,gAvg,rAvg]).astype("uint8")
 
 # cv2.imwrite("sidewalk_long_exposure.png",avg)
-cv2.imwrite("stairs_long_exposure.png",avg)
+# cv2.imwrite("stairs_long_exposure.png",avg)
+
+cv2.imwrite("hallway_long_exposure.png",avg)
+# cv2.imwrite("hallway_shoes_long_exposure.png",avg)
 
 vid.release()
